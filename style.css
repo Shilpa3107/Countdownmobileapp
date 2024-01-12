@@ -98,13 +98,7 @@ button:hover {
         margin: 0;
     }
 }
-#add-event-form {
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px; /* Add margin for separation from the event list */
-}
+
 
 #add-event-button {
     display: none; /* Initially hide the button on larger screens */

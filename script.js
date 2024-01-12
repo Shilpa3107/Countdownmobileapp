@@ -74,8 +74,5 @@ document.addEventListener('DOMContentLoaded', function () {
             setInterval(updateCountdown, 1000); // Update every second
         }
     });
-    // Show/hide the form on button click for smaller screens
-    addEventButton.addEventListener('click', function () {
-        addEventForm.classList.toggle('show-form');
-    });
+    
 });

@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let events = [];
     let activeEventIndex = null;
 
+    function updateAddEventButtonVisibility() {
+        const addButton = document.getElementById('add-event-button');
+        addButton.style.display = events.length === 0 ? 'block' : 'none';
+    }
+
     // Function to update the countdown display
     function updateCountdown() {
         if (activeEventIndex !== null) {
@@ -40,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 countdownElement.textContent = 'Event has passed';
             }
         }
+        updateAddEventButtonVisibility();
     }
 
     // Function to add a new event to the list
@@ -87,10 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
             eventNameElement.textContent = eventName;
             setInterval(updateCountdown, 1000); // Update every second
         }
+        updateAddEventButtonVisibility();
     });
 
     // Show/hide the form on button click for smaller screens
     addEventButton.addEventListener('click', function () {
         addEventForm.classList.toggle('show-form');
     });
+    updateAddEventButtonVisibility();
 });

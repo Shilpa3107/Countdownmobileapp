@@ -3,7 +3,9 @@ body {
     margin: 20px;
     background-color: #75ba9b;
 }
-
+#plus {
+    display: none;
+}
 .container {
     max-width: 800px;
     margin: auto;
@@ -90,27 +92,16 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Responsive Styling */
-@media (max-width: 600px) {
-    #countdown-screen,
-    #events-list,
-    #add-event-form {
-        margin: 0;
-    }
-}
-
-
-#add-event-button {
-    display: none; /* Initially hide the button on larger screens */
-}
-
 /* Show the button on smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
+    
     #add-event-form {
-        text-align: center;
+        display: none;
+        /* text-align: center; */
     }
 
-    .add-event-button {
+    #plus {
+        display: block;
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -124,16 +115,23 @@ button:hover {
         transition: background-color 0.3s;
     }
     
-    .add-event-button:hover {
+    #plus:hover {
         background-color: #2980b9;
     }
 
-    #add-event-form form {
+    #add-event-form {
         display: none; /* Hide the form initially on smaller screens */
     }
 
-    #add-event-form.show-form form {
+    #add-event-form.show-form {
+        display: block;
+        text-align: center;
+    }
+    #add-event-form.show-form form{
         display: grid;
         gap: 15px;
+    }
+    #add-event-form h2{
+        display:none;
     }
 }

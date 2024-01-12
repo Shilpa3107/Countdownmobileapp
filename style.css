@@ -1,7 +1,12 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
-    background-color: #f2f2f2;
+    background-color: #75ba9b;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
 }
 
 #countdown-screen {
@@ -9,27 +14,27 @@ body {
     margin-bottom: 20px;
     padding: 20px;
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(30, 29, 29, 0.1);
+    border-radius: 8px;
+}
+
+#countdown {
+    font-size: 3em;
+    color: #2ecc71;
+    margin-top: 10px;
 }
 
 #event-name {
     color: #333;
 }
 
-#countdown {
-    font-size: 24px;
-    margin-top: 10px;
-    color: #e44d26; /* Orange color */
-}
-
-#event-list {
+/* #event-list {
     margin-bottom: 20px;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    border-radius: 8px;
+    overflow: hidden;
+} */
 
 #events {
     list-style-type: none;
@@ -37,64 +42,56 @@ body {
 }
 
 #events li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f8f8f8;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-bottom: 1px solid #ecf0f1;
+    transition: background-color 0.3s;
+}
+
+#events li:hover {
+    background-color: #ecf0f1;
 }
 
 #add-event-form {
-    text-align: center;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
 }
 
-#event-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+form {
+    display: grid;
+    gap: 15px;
 }
 
 label {
-    margin-bottom: 5px;
     font-weight: bold;
 }
 
 input {
-    padding: 8px;
-    margin-bottom: 15px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
     border-radius: 5px;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #4caf50; /* Green color */
-    color: #fff;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #2980b9;
 }
 
-@media (min-width: 768px) {
-    /* Apply different styles for larger screens */
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-
-    #countdown-screen, #event-list, #add-event-form {
-        width: 60%;
+/* Responsive Styling */
+@media (max-width: 600px) {
+    #countdown-screen,
+    #event-list,
+    #add-event-form {
+        margin: 0;
     }
 }

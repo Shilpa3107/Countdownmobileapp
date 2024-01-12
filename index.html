@@ -12,23 +12,20 @@
         <div id="countdown"></div>
     </div>
     
-    <div id="event-list">
-        <!-- <h2>Active Countdown Events</h2> -->
-        <ul id="events"></ul>
-    </div>
-
-    <div id="add-event-form">
+    <div id="add-event-form" class="show-form">
         <h2>Add New Countdown Event</h2>
         <form id="event-form">
             <label for="event-name-input">Event Name:</label>
             <input type="text" id="event-name-input" required>
-
+    
             <label for="event-date-input">Event Date:</label>
             <input type="datetime-local" id="event-date-input" required>
-
+    
             <button type="submit">Add Event</button>
         </form>
     </div>
+    
+    <button id="add-event-button">+</button>
 
     <script src="script.js"></script>
 </body>

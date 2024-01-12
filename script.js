@@ -4,15 +4,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const eventsListElement = document.getElementById('events');
     const eventListContainer = document.getElementById('events-list');
     const addEventForm = document.getElementById('add-event-form');
-    const addEventButton = document.getElementById('add-event-button');
+    const addEventButton = document.getElementById('plus');
     const eventForm = document.getElementById('event-form');
 
     let events = [];
     let activeEventIndex = null;
 
-    function updateAddEventButtonVisibility() {
-        const addButton = document.getElementById('add-event-button');
-        addButton.style.display = events.length === 0 ? 'block' : 'none';
+    function updateVisibility() {
+        const addButton = document.getElementById('plus');
+        const addEventFormDiv = document.getElementById('add-event-form');
+
+        addButton.style.display = window.innerWidth <= 650 && events.length === 0 ? 'block' : 'none';
+        addEventFormDiv.style.display = window.innerWidth <= 650 || events.length === 0 ? 'block' : 'none';
+    }
+
+    function hideInputFields() {
+        const addEventForm = document.getElementById('add-event-form');
+        addEventForm.classList.remove('show-form');
+        addEventButton.style.display = 'block'; // Show the + sign after hiding the form
+    }
+
+    function showInputFields() {
+        const addEventForm = document.getElementById('add-event-form');
+        addEventForm.classList.add('show-form');
+        addEventButton.style.display = 'none'; // Hide the + sign while showing the form
     }
 
     // Function to update the countdown display
@@ -45,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 countdownElement.textContent = 'Event has passed';
             }
         }
-        updateAddEventButtonVisibility();
     }
 
     // Function to add a new event to the list
@@ -83,6 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
         events.push(newEvent);
         addEventToList(newEvent, events.length - 1);
 
+        hideInputFields();
+
         // Reset input fields
         eventNameInput.value = '';
         eventDateInput.value = '';
@@ -93,12 +109,19 @@ document.addEventListener('DOMContentLoaded', function () {
             eventNameElement.textContent = eventName;
             setInterval(updateCountdown, 1000); // Update every second
         }
-        updateAddEventButtonVisibility();
+        updateVisibility();
     });
 
     // Show/hide the form on button click for smaller screens
     addEventButton.addEventListener('click', function () {
-        addEventForm.classList.toggle('show-form');
+        const addEventForm = document.getElementById('add-event-form');
+        if (addEventForm.classList.contains('show-form')) {
+            hideInputFields();
+        } else {
+            showInputFields();
+        }
+
+        updateVisibility();
     });
-    updateAddEventButtonVisibility();
+    updateVisibility();
 });

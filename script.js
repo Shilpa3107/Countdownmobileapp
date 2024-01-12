@@ -1,50 +1,52 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const eventNameInput = document.getElementById('event-name-input');
-    const eventDateInput = document.getElementById('event-date-input');
-    const countdownScreen = document.getElementById('countdown');
-    const eventsList = document.getElementById('events');
+    const countdownElement = document.getElementById('countdown');
+    const eventNameElement = document.getElementById('event-name');
+    const eventsListElement = document.getElementById('events');
     const eventForm = document.getElementById('event-form');
 
-    eventForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+    let events = [];
 
-        const eventName = eventNameInput.value;
-        const eventDate = new Date(eventDateInput.value);
-        
-        if (!eventName || isNaN(eventDate.getTime())) {
-            alert('Please enter valid event details.');
-            return;
-        }
+    // Function to update the countdown display
+    function updateCountdown(event) {
+        const now = new Date();
+        const eventDate = new Date(event.date);
+        const timeDiff = eventDate - now;
+
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        countdownElement.textContent = `${days} days ${hours} hours`;
+    }
+
+    // Function to add a new event to the list
+    function addEventToList(event) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${event.name} - ${event.date}`;
+        eventsListElement.appendChild(listItem);
+    }
+
+    // Event form submission handler
+    eventForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const eventName = document.getElementById('event-name-input').value;
+        const eventDate = document.getElementById('event-date-input').value;
 
         const newEvent = {
             name: eventName,
             date: eventDate
         };
 
-        // Add the new event to the list
+        events.push(newEvent);
         addEventToList(newEvent);
 
-        // Reset the form inputs
-        eventNameInput.value = '';
-        eventDateInput.value = '';
+        // Reset input fields
+        eventForm.reset();
+
+        // If it's the first event, set it as the active event
+        if (events.length === 1) {
+            eventNameElement.textContent = eventName;
+            setInterval(() => updateCountdown(newEvent), 1000); // Update every second
+        }
     });
-
-    function addEventToList(event) {
-        const eventListItem = document.createElement('li');
-        eventListItem.textContent = `${event.name} - ${event.date.toDateString()}`;
-        eventsList.appendChild(eventListItem);
-
-        // Update the countdown screen with the new event
-        updateCountdownScreen(event);
-    }
-
-    function updateCountdownScreen(event) {
-        const now = new Date();
-        const timeDifference = event.date - now;
-
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-        countdownScreen.textContent = `${days} days and ${hours} hours until ${event.name}`;
-    }
 });

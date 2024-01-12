@@ -63,8 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
     eventForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const eventName = document.getElementById('event-name-input').value;
-        const eventDate = document.getElementById('event-date-input').value;
+        const eventNameInput = document.getElementById('event-name-input');
+        const eventDateInput = document.getElementById('event-date-input');
+
+        const eventName = eventNameInput.value;
+        const eventDate = eventDateInput.value;
 
         const newEvent = {
             name: eventName,
@@ -75,7 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
         addEventToList(newEvent, events.length - 1);
 
         // Reset input fields
-        eventForm.reset();
+        eventNameInput.value = '';
+        eventDateInput.value = '';
 
         // If it's the first event, set it as the active event
         if (events.length === 1) {

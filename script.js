@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const countdownElement = document.getElementById('countdown');
     const eventNameElement = document.getElementById('event-name');
     const eventsListElement = document.getElementById('events');
-    const eventListContainer = document.getElementById('event-list');
+    const eventListContainer = document.getElementById('events-list');
     const addEventForm = document.getElementById('add-event-form');
     const addEventButton = document.getElementById('add-event-button');
     const eventForm = document.getElementById('event-form');

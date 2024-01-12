@@ -29,7 +29,7 @@ body {
     margin-top: 10px; /* Adjust the margin for vertical alignment */
 }
 
-#event-list {
+#events-list {
     max-height: 0;
     overflow-y: hidden;
     margin-bottom: 20px;
@@ -93,7 +93,7 @@ button:hover {
 /* Responsive Styling */
 @media (max-width: 600px) {
     #countdown-screen,
-    #event-list,
+    #events-list,
     #add-event-form {
         margin: 0;
     }

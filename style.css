@@ -25,7 +25,10 @@ body {
     color: #333;
     margin-top: 0px; /* Adjust the margin for vertical alignment */
 }
-
+#archive-section {
+    display: none;
+    margin-top: 2px;
+}
 #events-list {
     height: 50px;  /* Adjust the height as needed */
     overflow-y: auto;   /* Add a vertical scroll bar when the content exceeds the specified height */
@@ -37,7 +40,7 @@ body {
     margin: 0;
 }
 #events li {
-    padding: 1px;
+    padding: 0.2px;
     border-bottom: 1px solid #ecf0f1;
     transition: background-color 0.3s;
     margin:0;
@@ -49,7 +52,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    padding: 20px;
+    padding: 8px;
 }
 form {
     display: grid;

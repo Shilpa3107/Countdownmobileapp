@@ -16,11 +16,12 @@ body {
     border-radius: 8px;
 }
 #countdown {
-    font-size: 3em;
+    font-size: 18px;
     color: #2ecc71;
-    margin-top: 10px;
+    margin-top: 3px;
 }
 #event-name {
+    font-size: 18px;
     color: #333;
     margin-top: 0px; /* Adjust the margin for vertical alignment */
 }
@@ -31,7 +32,7 @@ body {
     /* margin-bottom: 20px; */
     /* background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    border-radius: 8px;
+    border-radius: 1px;
     /*transition: height 0.3s; /* Add a transition effect on height */
 }
 #events {

@@ -30,7 +30,7 @@ body {
     margin-top: 2px;
 }
 #events-list {
-    height: 50px;  /* Adjust the height as needed */
+    height: 80px;  /* Adjust the height as needed */
     overflow-y: auto;   /* Add a vertical scroll bar when the content exceeds the specified height */
     border-radius: 1px;
 }

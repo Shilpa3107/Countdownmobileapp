@@ -29,11 +29,7 @@ body {
 #events-list {
     height: 50px;  /* Adjust the height as needed */
     overflow-y: auto;   /* Add a vertical scroll bar when the content exceeds the specified height */
-    /* margin-bottom: 20px; */
-    /* background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     border-radius: 1px;
-    /*transition: height 0.3s; /* Add a transition effect on height */
 }
 #events {
     list-style-type: none;

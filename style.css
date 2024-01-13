@@ -41,7 +41,7 @@ body {
     margin: 0;
 }
 #events li {
-    padding: 15px;
+    padding: 1px;
     border-bottom: 1px solid #ecf0f1;
     transition: background-color 0.3s;
     margin:0;

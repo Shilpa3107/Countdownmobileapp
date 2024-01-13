@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         eventsListElement.appendChild(listItem);
         // Adjust the max-height of the event list container to show scrollbar
-        eventListContainer.style.maxHeight = `${eventsListElement.clientHeight}px`;
+        eventListContainer.style.maxHeight = 50;
     }
     // Event form submission handler
     eventForm.addEventListener('submit', function (event) {

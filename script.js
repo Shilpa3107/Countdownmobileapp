@@ -66,17 +66,33 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         const eventNameInput = document.getElementById('event-name-input');
         const eventDateInput = document.getElementById('event-date-input');
+        const colorSchemeInput = document.getElementById('color-scheme-input');
+        // const emojiInput = document.getElementById('emoji-input');
+        const backgroundImageInput = document.getElementById('background-image-input');
+
         const eventName = eventNameInput.value;
         const eventDate = eventDateInput.value;
+        const colorScheme = colorSchemeInput.value;
+        // const emoji = emojiInput.value;
+        const backgroundImage = backgroundImageInput.value;
+
         const newEvent = {
             name: eventName,
-            date: eventDate
+            date: eventDate,
+            colorScheme: colorScheme,
+            // emoji: emoji,
+            backgroundImage: backgroundImage
         };
+
         events.push(newEvent);
         addEventToList(newEvent, events.length - 1);
         // Reset input fields
         eventNameInput.value = '';
         eventDateInput.value = '';
+        colorSchemeInput.value = '#3498db';
+        // emojiInput.value = '';
+        backgroundImageInput.value = '';
+
         // If it's the first event, set it as the active event
         if (events.length === 1) {
             activeEventIndex = 0;
@@ -89,6 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function addEventToList(event, index) {
         const listItem = document.createElement('li');
         listItem.textContent = `${event.name} - ${event.date}`;
+        listItem.style.color = event.colorScheme; // Set text color based on the color scheme
+        listItem.style.backgroundImage = `url(${event.backgroundImage})`; // Set background image
+        listItem.style.backgroundSize = 'cover'; // Ensure the background image covers the entire element
 
         // Add "Complete" button to each event
         const completeButton = document.createElement('button');
@@ -111,5 +130,4 @@ document.addEventListener('DOMContentLoaded', function () {
         // Adjust the max-height of the event list container to show scrollbar
         eventListContainer.style.maxHeight = 80;
     }
-    
 });

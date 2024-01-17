@@ -121,20 +121,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const eventNameInput = document.getElementById('event-name-input');
         const eventDateInput = document.getElementById('event-date-input');
         const colorSchemeInput = document.getElementById('color-scheme-input');
-        // const emojiInput = document.getElementById('emoji-input');
         const backgroundImageInput = document.getElementById('background-image-input');
 
         const eventName = eventNameInput.value;
         const eventDate = eventDateInput.value;
         const colorScheme = colorSchemeInput.value;
-        // const emoji = emojiInput.value;
         const backgroundImage = backgroundImageInput.value;
 
         const newEvent = {
             name: eventName,
             date: eventDate,
             colorScheme: colorScheme,
-            // emoji: emoji,
             backgroundImage: backgroundImage
         };
 
@@ -144,9 +141,9 @@ document.addEventListener('DOMContentLoaded', function () {
         eventNameInput.value = '';
         eventDateInput.value = '';
         colorSchemeInput.value = '#3498db';
-        // emojiInput.value = '';
         backgroundImageInput.value = '';
-
+        
+        // If it's the first event, set it as the active event
         if (events.length === 1) {
             activeEventIndex = 0;
             eventNameElement.textContent = eventName;

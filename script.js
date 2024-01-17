@@ -147,7 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // emojiInput.value = '';
         backgroundImageInput.value = '';
 
-        // If it's the first event, set it as the active event
         if (events.length === 1) {
             activeEventIndex = 0;
             eventNameElement.textContent = eventName;

@@ -23,15 +23,15 @@ body {
 #event-name {
     font-size: 18px;
     color: #333;
-    margin-top: 0px; /* Adjust the margin for vertical alignment */
+    margin-top: 0px;
 }
 #archive-section {
     display: none;
     margin-top: 2px;
 }
 #events-list {
-    height: 80px;  /* Adjust the height as needed */
-    overflow-y: auto;   /* Add a vertical scroll bar when the content exceeds the specified height */
+    height: 80px;  
+    overflow-y: auto;  
     border-radius: 1px;
 }
 #events {
@@ -78,26 +78,22 @@ button {
 button:hover {
     background-color: #2980b9;
 }
-/* Responsive Styling */
 @media (max-width: 600px) {
     #countdown-screen,
     #events-list,
     #add-event-form {
         margin: 0;
     }
-
-  
 }
 #add-event-button {
-    display: none; /* Initially hide the button on larger screens */
+    display: none; 
 }
-/* Show the button on smaller screens */
 @media (max-width: 600px) {
     #add-event-form {
         text-align: center;
     }
     #add-event-form form {
-        display: none; /* Hide the form initially on smaller screens */
+        display: none;
     }
     #add-event-form.show-form form {
         display: grid;

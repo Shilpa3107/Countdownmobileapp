@@ -162,4 +162,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+    console.log("Before checking events : ");
+    // Check if there are any events
+    if (events.length > 0) {
+        console.log("Events found: ",events);
+        // Set the first event as the active event
+        activeEventIndex = 0;
+        eventNameElement.textContent = events[0].name;
+        updateCountdown();
+    }
+    console.log("After checking events");
+    console.log("Active event index : ",activeEventIndex);
+    console.log("Event name : ",eventNameElement.textContent);
 });

@@ -115,6 +115,19 @@ document.addEventListener('DOMContentLoaded', function () {
         sendNotificationReminder(event);
     }
 
+    function toggleArchiveSection() {
+        console.log("Entering inside the toggle archive section")
+        if (archiveSection.style.display === 'none' || archiveSection.style.display === '') {
+            console.log("display = block")
+            archiveSection.style.display = 'block';
+        } else {
+            console.log("display = none");
+            archiveSection.style.display = 'none';
+        }
+        console.log("Coming out of the toggle archive section");
+    }
+   
+
     // Event form submission handler
     eventForm.addEventListener('submit', function (event) {
         event.preventDefault();

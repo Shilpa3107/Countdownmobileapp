@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (Notification.permission === 'granted') {
                 const notification = new Notification(`Reminder: ${event.name}`, {
                     body: `Your event "${event.name}" is coming up in ${daysBeforeEvent} days!`,
-                    icon: 'icon.png', // Replace with the path to your notification icon
+                    icon: 'icon.png',
                 });
             }
         }
@@ -86,16 +86,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function addEventToList(event, index) {
         const listItem = document.createElement('li');
         listItem.textContent = `${event.name} - ${event.date}`;
-        listItem.style.color = event.colorScheme; // Set text color based on the color scheme
-        listItem.style.backgroundImage = `url(${event.backgroundImage})`; // Set background image
-        listItem.style.backgroundSize = 'cover'; // Ensure the background image covers the entire element
+        listItem.style.color = event.colorScheme; 
+        listItem.style.backgroundImage = `url(${event.backgroundImage})`; 
+        listItem.style.backgroundSize = 'cover'; 
 
         // Add "Complete" button to each event
         const completeButton = document.createElement('button');
         completeButton.textContent = 'Complete';
-        completeButton.style.display = 'none'; // Initially hide the button
+        completeButton.style.display = 'none'; 
         completeButton.addEventListener('click', function (e) {
-            e.stopPropagation(); // Prevent the click event from triggering the event item click
+            e.stopPropagation(); 
             archiveEvent(index);
         });
         listItem.appendChild(completeButton);

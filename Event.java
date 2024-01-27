@@ -20,7 +20,6 @@ public class Event {
         return backgroundImage;
     }
 
-    // Setters
     public void setName(String name) {
         this.name = name;
     }

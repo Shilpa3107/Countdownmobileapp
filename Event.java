@@ -1,14 +1,14 @@
 public class Event {
-    private String name;
-    private String date;
-    private String colorScheme;
-    private String backgroundImage;
+    private String name;   //for storing event names
+    private String date;     //for storing event dates
+    private String colorScheme;    //for storing the name of the color
+    private String backgroundImage;   //for storing the url of the background image
 
-    public String getName() {
+    public String getName() {    
         return name;
     }
 
-    public String getDate() {
+    public String getDate() {   
         return date;
     }
 

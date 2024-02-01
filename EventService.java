@@ -1,8 +1,8 @@
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service; //importing spring framework
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Service 
 public class EventService {
     private List<Event> events = new ArrayList<>();
 
